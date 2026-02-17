@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Presentación QA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/night.css">
+
+    <style>
+        .reveal h1, .reveal h2, .reveal h3 { text-transform: none; font-size: 2em;}
+        .reveal p, .reveal li { font-size: 0.8em; text-align: justify; line-height: 1.4; }
+        .reveal ul { display: block; }
+        .highlight { color: #e7ad52; font-weight: bold; } /* Color dorado para resaltar */
+        .slide-footer { position: absolute; bottom: 10px; left: 0; right: 0; text-align: center; font-size: 12px; color: grey; }
+        
+        .two-col { display: flex; gap: 20px; }
+        .col { flex: 1; }
+    </style>
+</head>
+<body>
+
+    <div class="reveal">
+        <div class="slides">
+
+            <section>
+                <h1>VERIFICACIÓN Y VALIDACIÓN DE SOFTWARE</h1>
+                <h3 style="font-size: 1em;">TAREA 1 - RECONOCIMIENTO DE CONCEPTOS BÁSICOS</h3>
+                <p style="text-align: center; color: #aaa;">Sebastian Bueno Guerrero</p>
+            </section>
+
+            <section>
+                <h2>Índice de Temas</h2>
+                <ol>
+                    <li>Verificación vs. Validación</li>
+                    <li>Casos de Prueba (Elementos)</li>
+                    <li>Tipos de Pruebas de Software</li>
+                    <li>Automatización (Katalon Studio)</li>
+                    <li>Importancia de Pruebas de Regresión</li>
+                </ol>
+            </section>
+
+            <section>
+                <h3 style="font-size: 1em;">1. Verificación vs. Validación</h3>
+                <div class="two-col">
+                    <div class="col">
+                        <h4 class="highlight">Verificación</h4>
+                        <p><strong>"¿Estamos construyendo el producto correctamente?"</strong></p>
+                        <p>Revisar que el software cumpla los requisitos técnicos y el diseño inicial. Es una revisión interna (código, especificaciones).</p>
+                    </div>
+                    <div class="col">
+                        <h4 class="highlight">Validación</h4>
+                        <p><strong>"¿Estamos construyendo el producto correcto?"</strong></p>
+                        <p>Asegurar que el software le sirva al usuario y solucione su problema real. Es útil, claro y adecuado.</p>
+                    </div>
+                </div>
+                <hr>
+                <p style="font-size: 0.6em; background: #333; padding: 10px; border-radius: 5px;">
+                    <strong>Ejemplo (App de Gastos):</strong><br>
+                    <em>Verificar:</em> El sistema guarda datos y calcula restas sin errores.<br>
+                    <em>Validar:</em> El usuario siente que la app le ayuda a ahorrar y entiende la interfaz.
+                </p>
+            </section>
+
+            <section>
+                <h3 style="font-size: 1em;">2. ¿Qué es un Caso de Prueba?</h3>
+                <p>Es un conjunto de condiciones o variables bajo las cuales un evaluador determinará si una aplicación satisface los requerimientos o funciona correctamente.</p>
+                
+                <h4 class="highlight">5 Elementos indispensables:</h4>
+                <ul style="font-size: 0.7em;">
+                    <li><strong>ID del Caso:</strong> Identificador único (ej. CP-001).</li>
+                    <li><strong>Descripción/Objetivo:</strong> Qué funcionalidad se va a probar.</li>
+                    <li><strong>Pre-condiciones:</strong> Qué debe estar listo antes de probar (ej. "Usuario logueado").</li>
+                    <li><strong>Pasos a ejecutar:</strong> Instrucciones paso a paso de qué hacer.</li>
+                    <li><strong>Resultado Esperado:</strong> Qué debería pasar si todo funciona bien (ej. "Aparece mensaje de éxito").</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3 style="font-size: 1em;">3. Tipos de Pruebas de Software</h3>
+                <p>Existen diversas formas de clasificar las pruebas, las más comunes son:</p>
+                
+                <div class="two-col">
+                    <div class="col">
+                        <span class="highlight">Por Nivel (La Pirámide):</span>
+                        <ul>
+                            <li><strong>Unitarias:</strong> Prueban la parte más pequeña del código (funciones).</li>
+                            <li><strong>Integración:</strong> Prueban cómo interactúan módulos entre sí.</li>
+                            <li><strong>Sistema:</strong> Prueba el software completo.</li>
+                            <li><strong>Aceptación:</strong> El usuario final aprueba el software.</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <span class="highlight">Por Objetivo:</span>
+                        <ul>
+                            <li><strong>Funcionales:</strong> ¿Qué hace el sistema? (Login, compras).</li>
+                            <li><strong>No Funcionales:</strong> ¿Cómo lo hace? (Rendimiento, Seguridad, Usabilidad).</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3 style="font-size: 1em;">4. Automatización de Pruebas</h3>
+                <p>Consiste en usar software para controlar la ejecución de pruebas, comparando los resultados obtenidos con los esperados. Su fin es <strong>reducir esfuerzo manual, costos y tiempo</strong>.</p>
+                
+                <div style="background: #222; padding: 15px; border-radius: 10px; margin-top: 20px;">
+                    <h4 class="highlight">Herramienta: Katalon Studio</h4>
+                    <ul style="font-size: 0.65em;">
+                        <li><strong>Versátil:</strong> Pruebas API, Web, Móvil y Escritorio.</li>
+                        <li><strong>Para todos:</strong> Permite grabar acciones (sin código) o usar Scripts (con código).</li>
+                        <li><strong>Integración:</strong> Compatible con CI/CD, Git y reportes detallados.</li>
+                        <li>Ayuda a mejorar la colaboración entre QA y Desarrollo.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h3 style="font-size: 1em;">5. Pruebas de Regresión</h3>
+                <p>Garantizan que el software siga funcionando tras un cambio (parches, mejoras o configuraciones). Evitan que "arreglar algo rompa otra cosa".</p>
+
+                <p class="highlight">¿Por qué son importantes?</p>
+                <ul style="font-size: 0.7em;">
+                    <li><strong>Detección de efectos secundarios:</strong> Encuentra conflictos entre código nuevo y viejo.</li>
+                    <li><strong>Estabilidad:</strong> Asegura que las funciones críticas no se degraden.</li>
+                    <li><strong>Ahorro:</strong> Detectar errores temprano es más barato que corregirlos en producción.</li>
+                    <li><strong>Confianza:</strong> Mantiene la experiencia del usuario consistente.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>¡Gracias!</h2>
+                <p style="text-align: center;">UNAD 2026</p>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            center: true,
+            hash: true, 
+            transition: 'slide'
+        });
+    </script>
+</body>
+</html>
